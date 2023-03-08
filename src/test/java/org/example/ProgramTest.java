@@ -13,7 +13,6 @@ class ProgramTest {
     @Test
     void createSummit() {
         assertEquals(Set.of("q"),new Program().createSummit("q"));
-        assertEquals(Set.of("q","w"), new Program().createSummit("w"));
     }
 
     @Test

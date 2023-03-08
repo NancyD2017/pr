@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class Program {
+public final class Program {
     static Set<String> graph = new HashSet<>();
     static Map<String, Map<String, Integer>> arc = new HashMap<>();
 
@@ -40,39 +40,39 @@ public class Program {
         }
     }
 
-    static Set<String> createSummit(String summit1) {
+    public Set<String> createSummit(String summit1) {
         graph.add(summit1);
         return (graph);
     }
 
-    static Set<String> deleteSummit(String summit2) {
+    public Set<String> deleteSummit(String summit2) {
         graph.remove(summit2);
         return (graph);
     }
 
-    static Map<String, Map<String, Integer>> createArc(String arc3, String arcDirection, Integer arcWeight) {
+    public Map<String, Map<String, Integer>> createArc(String arc3, String arcDirection, Integer arcWeight) {
         String[] summits = arcDirection.split(" ");
         arc.put(arc3, Map.of(summits[0] + " -> " + summits[1], arcWeight));
         return arc;
     }
 
-    static Map<String, Map<String, Integer>> deleteArc(String arc4) {
+    public Map<String, Map<String, Integer>> deleteArc(String arc4) {
         arc.remove(arc4);
         return arc;
     }
 
-    static Map<String, Map<String, Integer>> arcNameChangement(String arc5, String newName) {
+    public Map<String, Map<String, Integer>> arcNameChangement(String arc5, String newName) {
         arc.put(newName, arc.get(arc5));
         arc.remove(arc5);
         return (arc);
     }
 
-    static Map<String, Map<String, Integer>> arcWeightChangement(String arc6, int newWeight) {
+    public Map<String, Map<String, Integer>> arcWeightChangement(String arc6, int newWeight) {
         arc.put(arc6, Map.of(arc.get(arc6).keySet().toString().replaceAll("[^a-zA-Z ->]+", ""), newWeight));
         return (arc);
     }
 
-    static Set<String> outsList(String getOuts) {
+    public Set<String> outsList(String getOuts) {
         Set<String> answer = new HashSet<>();
         arc.forEach((key, value) -> value.forEach((direction, weight) -> {
             String from = (Arrays.toString(direction.split(" -> .+")).replaceAll("[^a-zA-Z ]+", "").trim());
@@ -82,7 +82,7 @@ public class Program {
         return (answer);
     }
 
-    static Set<String> insList(String getIns) {
+    public Set<String> insList(String getIns) {
         Set<String> answer = new HashSet<>();
         arc.forEach((key, value) -> value.forEach((direction, weight) -> {
             String from = (Arrays.toString(direction.split(".+ -> ")).replaceAll("[^a-zA-Z ]+", "").trim());
