@@ -2,70 +2,63 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
-import java.util.Map;
-import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ProgramTest {
 
     @Test
-    void createSummit() {
-        assertEquals(Set.of("q"),new Program().createSummit("q"));
+    void testGraph() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        assertNotNull(g.getVertex(1));
     }
 
     @Test
-    void deleteSummit() {
-        new Program().createSummit("q");
-        assertEquals(Set.of("q"),new Program().deleteSummit("w"));
-        assertEquals(Set.of(),new Program().deleteSummit("q"));
+    void testGraph2() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        assertNotNull(g.getVertex(2));
     }
 
     @Test
-    void createArc() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        assertEquals(Map.of("arc",Map.of("q -> w", 7)),new Program().createArc("arc", "q w", 7));
+    void connectArcTest() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        g.connectArc(1, 2, 3);
+        assertNotNull(g.getVertex(1));
     }
 
     @Test
-    void deleteArc() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        new Program().createArc("arc", "q w", 7);
-        assertEquals(Map.of(),new Program().deleteArc("arc"));
+    void removeArcTest() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        g.connectArc(1, 2, 3);
+        g.removeArc(1, 2);
+        assertNull(g.getVertex(1));
     }
 
     @Test
-    void arcNameChangement() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        new Program().createArc("arc", "q w", 7);
-        assertEquals(Map.of("newArc",Map.of("q -> w", 7)),new Program().arcNameChangement("arc", "newArc"));
+    void renameVertexTest() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        g.connectArc(1, 2, 3);
+        g.renameVertex(1, 11);
+        assertNull(g.getVertex(1));
     }
 
     @Test
-    void arcWeightChangement() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        new Program().createArc("arc", "q w", 7);
-        assertEquals(Map.of("arc",Map.of("q -> w", 2)),new Program().arcWeightChangement("arc", 2));
-    }
-
-    @Test
-    void outsList() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        new Program().createArc("arc", "q w", 7);
-        assertEquals(Set.of("w"),new Program().outsList("q"));
-    }
-
-    @Test
-    void insList() {
-        new Program().createSummit("q");
-        new Program().createSummit("w");
-        new Program().createArc("arc", "q w", 7);
-        assertEquals(Set.of("q"),new Program().insList("w"));
+    void reWeight() {
+        DirectedGraph g = new DirectedGraph();
+        g.addVertex(1);
+        g.addVertex(2);
+        g.addVertex(3);
+        g.connectArc(1, 2, 3);
+        g.connectArc(1, 3, 10);
+        g.reWeight(1, 2, 11);
     }
 }
