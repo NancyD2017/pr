@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96e0d825-2c2a-401a-8eb3-fbdeae9d7fa5" name="Changes" comment="q">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Program.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ProgramTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ProgramTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +76,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ProgramTest.renameVertexTest">
+  <component name="RunManager" selected="Gradle.ProgramTest">
     <configuration name="ProgramTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -99,7 +100,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProgramTest.connectArcTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProgramTest.getInsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +113,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.ProgramTest.connectArcTest&quot;" />
+            <option value="&quot;org.example.ProgramTest.getInsTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProgramTest.getOutsTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.ProgramTest.getOutsTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -136,29 +160,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.example.ProgramTest.reWeight&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProgramTest.removeArcTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.ProgramTest.removeArcTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ProgramTest.renameVertexTest" />
-        <item itemvalue="Gradle.ProgramTest.removeArcTest" />
-        <item itemvalue="Gradle.ProgramTest.connectArcTest" />
         <item itemvalue="Gradle.ProgramTest" />
+        <item itemvalue="Gradle.ProgramTest.getInsTest" />
+        <item itemvalue="Gradle.ProgramTest.getOutsTest" />
         <item itemvalue="Gradle.ProgramTest.reWeight" />
+        <item itemvalue="Gradle.ProgramTest.renameVertexTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,29 +227,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="q" />
     <option name="LAST_COMMIT_MESSAGE" value="q" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java</url>
-          <line>34</line>
-          <properties class="org.example.DirectedGraph" method="removeArc">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java</url>
-          <line>45</line>
-          <properties class="org.example.DirectedGraph" method="reWeight">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
