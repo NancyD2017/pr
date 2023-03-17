@@ -7,7 +7,6 @@
     <list default="true" id="96e0d825-2c2a-401a-8eb3-fbdeae9d7fa5" name="Changes" comment="q">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DirectedGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Program.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ProgramTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ProgramTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +145,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProgramTest.reWeight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProgramTest.reWeightTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,7 +158,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.ProgramTest.reWeight&quot;" />
+            <option value="&quot;org.example.ProgramTest.reWeightTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -169,7 +168,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ProgramTest.renameVertexTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ProgramTest.testRemoveVertex" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -182,7 +181,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.ProgramTest.renameVertexTest&quot;" />
+            <option value="&quot;org.example.ProgramTest.testRemoveVertex&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,10 +194,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ProgramTest" />
-        <item itemvalue="Gradle.ProgramTest.getInsTest" />
+        <item itemvalue="Gradle.ProgramTest.reWeightTest" />
         <item itemvalue="Gradle.ProgramTest.getOutsTest" />
-        <item itemvalue="Gradle.ProgramTest.reWeight" />
-        <item itemvalue="Gradle.ProgramTest.renameVertexTest" />
+        <item itemvalue="Gradle.ProgramTest.testRemoveVertex" />
+        <item itemvalue="Gradle.ProgramTest.getInsTest" />
       </list>
     </recent_temporary>
   </component>

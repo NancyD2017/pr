@@ -26,9 +26,13 @@ public class DirectedGraph {
         }
     }
 
-    void addVertex(int value) {
+    public void addVertex(int value) {
         Vertex v = new Vertex(value);
         nodes.put(v, new ArrayList<>());
+    }
+
+    void removeVertex(int value) {
+        nodes.remove(getVertex(value));
     }
 
     Vertex getVertex(int value) {
@@ -48,7 +52,7 @@ public class DirectedGraph {
         Vertex srcVertex = getVertex(src);
         Vertex dstVertex = getVertex(dst);
         Arc toDelete = new Arc(dstVertex, 0);
-        var v = nodes.get(srcVertex);
+        List<Arc> v = nodes.get(srcVertex);
         for (Arc each: v) if (each.dst != null) if (each.dst.equals(dstVertex)) toDelete = each;
         nodes.get(srcVertex).remove(toDelete);
     }
@@ -62,7 +66,7 @@ public class DirectedGraph {
         Vertex dstVertex = getVertex(dst);
         Arc toChange = new Arc(dstVertex, 0);
         Vertex toChangeDst = toChange.dst;
-        var mapValue = nodes.get(srcVertex);
+        List<Arc> mapValue = nodes.get(srcVertex);
         for (Arc each: mapValue) if (each.dst != null) if (each.dst.equals(dstVertex)) {
             toChange = each;
             toChangeDst = each.dst;
@@ -70,18 +74,18 @@ public class DirectedGraph {
         nodes.get(srcVertex).remove(toChange);
         nodes.get(srcVertex).add(new Arc(toChangeDst, weightN));
     }
-    List<Object> getOuts(int src){
+    List<Integer> getOuts(int src){
         Vertex source = getVertex(src);
-        var mapValue = nodes.get(source);
-        var outcomes = new ArrayList<>();
+        List<Arc> mapValue = nodes.get(source);
+        ArrayList<Integer> outcomes = new ArrayList<>();
         for (Arc each: mapValue) {
             outcomes.add(each.dst.value);
         }
         return outcomes;
     }
-    List<Object> getIns(int dst){
+    List<Integer> getIns(int dst){
         Vertex source = getVertex(dst);
-        var incomes = new ArrayList<>();
+        ArrayList<Integer> incomes = new ArrayList<>();
         nodes.forEach((root, info) -> {
             for (Arc each: info) {
                 if (each.dst.equals(source)) incomes.add(root.value);

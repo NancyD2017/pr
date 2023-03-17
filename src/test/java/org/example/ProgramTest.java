@@ -12,16 +12,15 @@ class ProgramTest {
     void addVertexTest() {
         DirectedGraph g = new DirectedGraph();
         g.addVertex(1);
-        g.addVertex(2);
         assertNotNull(g.getVertex(1));
     }
 
     @Test
-    void testGraph2() {
+    void testRemoveVertex() {
         DirectedGraph g = new DirectedGraph();
         g.addVertex(1);
-        g.addVertex(2);
-        assertNotNull(g.getVertex(2));
+        g.removeVertex(1);
+        assertNull(g.getVertex(1));
     }
 
     @Test
@@ -56,12 +55,10 @@ class ProgramTest {
         DirectedGraph g = new DirectedGraph();
         g.addVertex(1);
         g.addVertex(2);
-        g.addVertex(3);
         g.connectArc(1, 2, 3);
-        g.connectArc(1, 3, 10);
-        var old = g.getListArc(1).toString();
+        int old = g.getListArc(1).hashCode();
         g.reWeight(1, 2, 11);
-        assertNotEquals((g.getListArc(1).toString()), old);
+        assertNotEquals(g.getListArc(1).hashCode(), old);
     }
     @Test
     void getOutsTest() {
